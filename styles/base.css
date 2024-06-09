@@ -1,0 +1,101 @@
+@font-face {
+  font-family: Inter;
+  src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: InterBold;
+  src: url(../fonts/Inter-Bold.ttf);
+}
+:root {
+  --color-primary: #ff7b54;
+  --color-text-on-primary: #fff;
+  --font-family: InterBold;
+  --color-button-border: var(--color-text-on-primary);
+
+  --color-button-primary-bg: var(--color-text-on-primary);
+  --color-button-primary-text: var(--color-primary);
+
+  --color-button-secondary-bg: var(--color-primary);
+  --color-button-secondary-text: var(--color-text-on-primary);
+}
+
+body {
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+.body-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+.body-secondary {
+  background-color: var(--color-text-on-primary);
+  color: var(--color-primary);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 34px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo nav shopping-cart";
+  align-items: center;
+}
+.header > a {
+  grid-area: logo;
+  font-size: 35px;
+  font-weight: bold;
+}
+.header img {
+  grid-area: shopping-cart;
+}
+.nav {
+  display: inline-block;
+  grid-area: nav;
+  justify-self: end;
+}
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+.nav__list-item {
+  margin-inline-end: 36px;
+  font-size: 18px;
+  /* display: inline; */
+  /* margin-right: 36px; */
+}
+.button {
+  box-sizing: border-box;
+  font-size: 32px;
+  padding: 0 64px;
+  height: 100px;
+  border: 4px solid var(--color-button-border);
+  cursor: pointer;
+  outline: none;
+  transition: outline 0.3s ease-in-out, transform 0.3s ease-in-out 0.5s;
+}
+.button:hover,
+.button:focus {
+  outline: 2px solid #fff;
+  transform: scaleY(1.3);
+}
+.button--primary {
+  background-color: var(--color-button-primary-bg);
+  columns: var(--color-button-primary-text);
+}
+.button--secondary {
+  background-color: var(--color-button-secondary-bg);
+  columns: var(--color-button-secondary-text);
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+.button:not(:last-of-type) {
+  margin-inline-end: 20px;
+}
+.button__icon {
+  vertical-align: middle;
+}
