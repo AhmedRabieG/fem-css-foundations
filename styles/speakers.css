@@ -1,1 +1,5 @@
 @import url(./base.css);
+
+.speakers .main__title {
+  font-size: 90px;
+}
